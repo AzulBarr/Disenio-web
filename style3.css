@@ -1,0 +1,145 @@
+* {
+    font-family:initial;
+    font-size: 20px;
+}
+/* display: block, ocupa todo el ancho
+inline, se adapta al ancho del contenido (no se puede modificar)
+inline-block, se adapta y se puede cambiar el ancho y alto */
+.overflow {
+    margin: auto;
+    margin-top: 50px;
+    width: 320px;
+    height: 350px;
+    border: 4px solid hotpink;
+    background: rgba(76, 0, 130, 0.397);
+    font-size: 60px;
+    overflow: auto; /* para que no sobresalga de la caja, se puede scrollear */
+    overflow: scroll; /* idem pero si o si barra de scroll */
+    overflow-x: hidden; /* no se puede scrollear en el eje x */
+}
+
+.float div {
+    float: right;
+    width: 50%;
+}
+.primario {
+    background: greenyellow;
+}
+.secundario {
+    background: lightblue;
+}
+.float2 {
+    /* ya no se usa tanto, si para envolver una imagen en texto */
+    margin: auto;
+    margin-top: 50px;
+    width: 600px;
+    border: 4px solid hotpink;
+    background: rgba(76, 0, 130, 0.397);
+    font-size: 60px;
+    padding: 20px;
+}
+img {
+    float: left;
+    width: 300px;
+    margin: 18px;
+}
+
+/* pseudo-elementos 
+first-line y letter solo se pueden aplicar a los que no son inline */
+.pseudo-elementos {
+    padding: 20px;
+}
+.pseudo-elementos::first-line {
+    color: lightpink;
+    font-family:cursive
+}
+.pseudo-elementos::first-letter {
+    font-size: 40px;
+}
+form {
+    margin: 100px auto;
+    display: block;
+    background: lavender;
+    padding: 100px;
+    width: 50%;
+    text-align: center;
+}
+input {
+    padding: 6px;
+}
+input::placeholder {
+    color: lawngreen;
+}
+input::selection {
+    color: rgb(255, 255, 255);
+    background-color: rgb(148, 7, 148);
+}
+/* b {
+    padding: 6px;
+    width: 100%;
+    }
+b::before {
+    content: 'holaaaa ';
+    color: tomato;
+    background: turquoise;
+}
+b::after {
+    content: ' td bn?';
+    color: tomato;
+    background: turquoise;
+} */
+
+/* pseudo-clases 
+link: cambia hasta que se apriete el link
+visited: cambia después que se apriete el link 
+active: más que nada para input */
+.pseudo-clases {
+    margin: auto;
+    text-align: center;
+    height: 200px;
+    width: 200px;
+    background-color:lightsalmon;
+    transition: background-color 2s, height 1s, width .5s; /* se puede poner 'all 1s */
+}
+.pseudo-clases:hover {
+    background-color: lightskyblue;
+    height: 400px;
+    width: 400px;
+}
+.pseudo-clases2 {
+    margin: 30px;
+    color: whitesmoke;
+    display: block;
+}
+.pseudo-clases2:link {
+    color: tomato;
+}
+.pseudo-clases2:visited {
+    color: violet;
+}
+.pseudo-clases3 {
+    width: 300px;
+    height: 300px;
+    background: turquoise;
+    margin: 25px;
+    transition: all 0.5s;
+}
+.pseudo-clases3:active {
+    background: yellowgreen;
+    width: 10px;
+    height: 10px;
+}
+.pseudo-clases4 {
+    margin: 25px;
+    background-color: black;
+    transition: all 1s;
+}
+.pseudo-clases4:focus {
+    background: yellowgreen;
+}
+.pseudo-clases5 {
+    margin: 25px;
+}
+.pseudo-clases5 b:lang(es) {
+    background: blue;
+}

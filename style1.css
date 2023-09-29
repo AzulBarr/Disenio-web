@@ -1,0 +1,46 @@
+/* universal, etiqueta, clase, id, atributo, decendiente, pseudo-clase */
+/* especifidad: (!important), (estilos en linea), (id), (class y pseuso, atributos), (elemenos y pseudo). */
+h1 { /* elemento */
+    color: rgb(230, 61, 221);
+}
+.color1 { /* clase */
+    color: rgb(149, 45, 235);
+}
+[atributo= "on"] { /* atributo */
+    color: rgb(61, 230, 160);
+}
+#color1 { /* id */
+    color: brown;
+}
+/* estilo en linea: <h1 style= "color:red" > */
+h1 { 
+    color:purple !important;
+    font-family: 'Rubik Beastly', cursive; /* tipografía importada */
+    font-weight: 50;
+    font-size: 100px;
+}
+/* metodología Bem */
+.form__input:first-child {
+    color: green
+}
+.tamaño {
+font-size: 25px;
+}
+.tamaño__h2 {
+    font-size: 50px; /* medidas fijas: cm, mm, pt, px, ... */
+    font-size: 2em; /* medidas relativas: em, rem, ...  1em = 16px pero es heredable del recipiente */
+    color: indianred;
+    font-family:sans-serif; /* tipografía */ 
+    line-height: 2;
+    font-weight: 600; /* grosor */
+    }
+/* sacar los valores por defecto, normalize (hay que descargarlo) */
+* {
+    padding: 0px;
+    margin: 0px;
+}
+.tamaño__h3 {
+    background-color: black;
+    width: 100vw;
+    height: 50vh; /* 100% viewport width, ancho de toda la pantalla */
+}

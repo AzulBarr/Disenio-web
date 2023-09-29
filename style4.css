@@ -1,0 +1,133 @@
+/* Object-fit, para imegenes */
+.object-fit {
+    margin: 25px;
+    width: 100px;
+    height: 150px;
+}
+.object-fit img {
+    height: 100%;
+    width: 100%;
+    border: 2px solid salmon;
+    object-fit: contain; /* se ajusta a su escala de resolución real sin que salga del container */
+    object-fit: none; /* toma el tamaño real */
+    object-fit: scale-down; /* elije entre contain y none, la resollución más chica */    
+    object-fit: cover; /* se ajusta a su contenedor recortandose */
+    object-position: left; /* dentro del contenedor se ve más la izquierda */
+    object-position: right;
+}
+
+.cursor {
+    margin: 30px;
+    width: 150px;
+    height: 150px;
+    border: 5px solid olive;
+    background-color: rgb(127, 143, 94);
+    cursor:pointer;
+}
+.cursor:active {
+    cursor:progress;
+}
+
+/* se adapta un diseño a varias resoluciones */
+.nav {
+    background: rgb(238, 151, 194);
+}
+.nav__responsive-ul {
+    display: none;
+}
+
+.nav__li a {
+    color: rgb(124, 12, 68);
+    text-decoration: none;
+}
+.nav__li i {
+    color: rgb(170, 2, 128);
+    margin: 5px;
+    box-sizing: border-box;
+    text-align:left;
+}
+.nav__li {
+    display: inline-block;
+    padding: 10px;
+}
+.nav__li:hover > i {
+    color: rgb(0, 0, 0);
+}
+.nav__li:hover > a {
+    color: rgb(0, 0, 0);
+}
+.nav__li:active > a {
+    cursor:progress;
+}
+
+/* desaparece el menu para monitor y aparece el de celular */
+@media only screen and (max-width: 420px) {
+    .nav__ul {
+        display: none;
+    }
+    .nav {
+        height: 37px;
+        width: 100%;
+    }
+    .nav__responsive-ul {
+        display: block;
+        position: absolute;
+        width: 100%;
+        margin-top: 37px;
+        padding-top: 27px;
+        height: 37px;
+    }
+    .nav__responsive-li-container {
+        position: relative;
+        top: -1000px;
+        height: calc(100vh - 64px);
+        background: rgb(70, 164, 196);
+        transition: all 1s;
+        z-index: 50;
+        width: 75%;
+        padding-top: 27px;
+    }
+    .nav__responsive-li {
+        padding: 9px 20px;
+        width: 100%;
+    }
+    .nav__responsive-li i {
+        color: wheat;
+        margin-right: 5px;
+        box-sizing: border-box;
+        text-align:center;
+        width: 30px;
+    }
+    .nav__responsive-button-container {
+        position: absolute; 
+        width: 100%;
+        font-size: 25px;
+        margin-top: -64px;
+        z-index: 100;
+        background-color: lightcoral;
+    } 
+    .nav__responsive-button {
+        color:wheat;
+        padding: 6px 10px;
+        text-align: left;
+        width: 100%;
+    }
+    .nav__responsive-li a {
+        width: 100%;
+        color: wheat;
+        text-decoration: none;
+    }
+    .nav__responsive-li:hover > i {
+        color: rgb(255, 255, 255);
+    }
+    .nav__responsive-li:hover > a {
+        color: rgb(255, 255, 255);
+    }
+    .nav__responsive-li:active > a {
+        cursor: progress;
+    } 
+/* hover en celulares funciona con click */
+    .nav__responsive-ul:hover > .nav__responsive-li-container {
+        top: -27px;
+    }
+}
